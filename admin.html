@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Amoija Events</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap4.min.css" rel="stylesheet">
+
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+        <!-- Stylesheet -->
+        <link href="css/admin.css" rel="stylesheet">
+
+        <!--Fontawesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div id="header"> 
+            <a><img src="img/logo.svg"></a>
+        </div>
+        <!--Main background (with the swimmers)-->
+        <div id="wallpaper"></div>
+        <div class='navBar_admin' id="navBar_admin">
+            <!-- row of buttons to add new event, new race or new location. Maybe locations will just be added to the db when adding races -->
+            <a class='navItem' id="nav_summary">Summary </a>
+            <span>/</span>
+            <a class='navItem' id="nav_event">Add Event</a>
+<!--
+            <span>/</span>
+            <a class='navItem' id="nav_race">Add Race</a>
+-->
+        </div>
+        <div id='admin-Content'>
+                <h1 class="text-center">ADMIN</h1>
+                <div class='row' id="summary"></div>
+                <div class='row' id='add-edit_events'>
+                    <div class='col-md-4'>
+                        <div class='row'>
+                            <div class = 'col-md-4'>
+                                <div id="file_upload" >
+                                    <p class="vertigo text-center">UPLOAD LOGO</p>
+                                </div>
+<!--
+                                <form method="post" enctype="multipart/form-data">
+                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                                    <div>Choose Logo</div>
+                                    <input type="submit" value="Upload Image" name="submit">
+                                </form>
+-->
+                            </div>
+                            <div class = 'col-md-4'>
+                                <label for="event_type">Type:</label>
+                                <select class="form-control" type="text" id="event_type">
+                                    <option>MTB</option>
+                                    <option>TRAIL</option>
+                                    <option>DUO</option>
+                                    <option>TRI</option>
+                                </select>
+                            </div>
+                            <div class = 'col-md-4'>
+                                <label for="event_date">Date:</label>
+                                <input class="form-control" type="text" name="event_date" id="event_date">
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class = 'col-md-12'>
+                                <label for="event_route">Route:</label>
+                                <div class="form-control editDiv" contenteditable="true" id="event_route" name="event_route" type="text" ></div>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class = 'col-md-12'>
+                                <label for="event_entries">Entries:</label>
+                                <div class="form-control editDiv" contenteditable="true" id="event_entries" name="event_entries" type="text" ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-4'>
+                        <div class='row'>
+                            <div class = 'col-md-6'>
+                                <label for="event_name">Name:</label>
+                                <input class="form-control" type="text" id="event_name">
+                            </div>
+                            <div class = 'col-md-6'>
+                                <label for="event_categories">Categories:</label>
+                                <input class="form-control" type="text" id="event_categories">
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class = 'col-md-12'>
+                                <label for="event_distances">Distances:</label>
+                                <div class="form-control editDiv" contenteditable="true" id="event_distances" name="event_distances" type="text" ></div>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class = 'col-md-12'>
+                                <label for="event_starting">Starting:</label>
+                                <div class="form-control editDiv" contenteditable="true" id="event_starting" name="event_starting" type="text" ></div>
+                            </div>
+                            <button class="btn btn-primary active" id="submit_event" type="button">Save Event</button>
+                        </div>
+                    </div>
+                    <div class='col-md-4'>
+                        <div class='row'>
+                            <div class = 'col-md-12'>
+                                <label for="event_abstract">Abstract:</label>
+                                <div class="form-control editDiv" contenteditable="true" id="event_abstract" name="event_abstract" type="text" ></div>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class = 'col-md-12'>
+                                <label for="event_registration">Registration:</label>
+                                <div class="form-control editDiv" contenteditable="true" id="event_registration" name="event_registration" type="text" ></div>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class = 'col-md-12'>
+                                <label for="event_more">More:</label>
+                                <div class="form-control editDiv" contenteditable="true" id="event_more" name="event_more" type="text" ></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div id='theDimMaker'>
+        </div>
+        <div class="alert alert-success" style="display:none">
+            <a class="close" aria-label="close">&times;</a>
+        </div>
+        <div class="alert alert-info race-alert" style="display:none">
+            <div class='row'>
+                <span>Are you sure?</span>
+            </div>
+            <div class='row'>
+                <div class="col align-self-center">
+                    <button class="btn btn-primary active cancel" type="button">Cancel</button>
+                    <button class="btn btn-primary active delete" type="button">OK</button>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-info event-alert" style="display:none">
+            <div class='row'>
+                <span>Are you sure? Races made under this event will also be deleted.</span>
+            </div>
+            <div class='row'>
+                <div class="col align-self-center">
+                    <button class="btn btn-primary active cancel" type="button">Cancel</button>
+                    <button class="btn btn-primary active delete" type="button">OK</button>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-danger" style="display:none">
+            <a class="close" aria-label="close">&times;</a>
+        </div>
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Tether -->
+        <script src=" https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="js/bootstrap4.min.js"></script>
+
+        <!-- Javascript -->
+        <script src="js/jaba.js"></script>
+    </body>
+
+</html>

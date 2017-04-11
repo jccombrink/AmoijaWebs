@@ -1,0 +1,265 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.vertigo{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#header{
+    position: relative;
+    width: 150px;
+    margin: 20px;   
+    cursor: pointer;
+    z-index: 10000;
+}
+
+#wallpaper{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    transition: background 3s ease-out, width 3s ease-out, height 3s ease-out, left 0.5s ease-out, top 3s ease-out;
+}
+.row{
+    position: relative;
+    margin: 0px;
+}
+
+#navBar_admin{
+    width: 80%;
+    left: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;  
+    height: 10%;    
+    position: fixed;
+    bottom: 0px;
+    z-index: 100;
+    font-size: 20px;
+    transition: all 0.3s ease-out;
+}
+
+span{
+    color: gray;
+}
+
+
+#admin-Content{
+    width: 100%;
+    position: absolute;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    overflow-y: auto;
+    max-height: 80%;
+    transition: all ease-out 0.5s;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+#admin-Content > h1 {
+    text-align: center;
+    color: darkgrey;
+}
+
+#add-edit_events input{
+    width: 100%;
+}
+
+#add-edit_events #file_upload{
+background-image: url(../img/x.svg);
+    height: 100px;
+    width: 150px;
+    color: white;
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: black;
+    border-radius: 2px;
+    border-style: dashed;
+}
+
+#add-edit_events #file_upload div{
+    position: relative;
+    height: 100%;
+    background-color: rgba(50,50,50,0.5);
+}
+
+#add-edit_events #file_upload div p{
+    font-size: 20px;
+    position: absolute;
+    bottom: 0px;
+    color: white;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    left: 50%;
+    padding: 0;
+    margin: 0px;
+    background-color: rgba(50,50,50,0.5);
+}
+
+
+#add-edit_events .col-md-4 > .row:nth-child(1){
+    min-height: 110px;
+}
+
+#add-edit_events .col-md-4 > .row:nth-child(2){
+    margin-bottom: 20px;
+}
+
+
+#add-edit_events div.form-control {
+    height: auto;
+    background-color: white;
+    min-height: 60px;
+    max-height:  200px;
+    overflow-y: auto;
+    overflow-x:  hidden;
+}
+
+.form-control{
+    padding-left: .15em;
+    padding-right: .15em;
+}
+
+label{
+    color: white;
+}
+.btn-primary{
+    background-color: #D5684C !important;
+    position: relative;
+    margin-top: 20px;
+    left: 50%;
+    color: black !important;
+    transform: translateX(-50%);
+}
+
+#add-edit_events,
+.add-edit_races{
+    display: none;
+}
+#summary{
+    color: white;
+}
+#summary .event{
+    margin-top: 10px;
+}
+.event{
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    cursor: default;
+}
+
+.event i{
+    margin-right: 20px;
+}
+
+.event i:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.event:hover > span {
+    display: inline !important;
+}
+
+.event button {
+    background-color: #D5684C !important;
+    position: relative;
+    color: black !important;
+    padding: 1px;
+}
+
+.event button:hover {
+    border-color: black;
+    border-radius: 3px;
+}
+
+.event span{
+    margin-left: 20px;
+}
+
+.race{
+    padding-left: 55px;
+    font-size: 18px;
+    cursor: default;
+}
+
+.race span{
+    margin-left: 20px;
+}
+
+.race.race_adder{
+    font-style: italic;
+    color: #D5684C;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.race:hover > span {
+    display: inline !important;
+}
+
+.race button {
+    background-color: #D5684C !important;
+    position: relative;
+    color: black !important;
+    padding: 1px;
+}
+
+.race button:hover {
+    border-color: black;
+    border-radius: 3px;
+}
+
+.alert{
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 18px;
+    z-index: 11;
+    padding: 8px 2px 8px 8px;
+    line-height: 30px;
+}
+.alert .close{
+    padding-left:  5px;
+    font-size: 30px;
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none !important;
+    color: #D5684C !important;
+}
+
+a:hover{
+    color: white !important;
+}
+
+#theDimMaker{
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: black;
+	opacity: 0.7;
+	width: 0;
+	height: 0;
+	z-index: 99;
+}
+#theDimMaker.active{
+	width: 100%;
+	height: 100%;
+}

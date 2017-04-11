@@ -1,0 +1,754 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+
+    overflow: hidden;
+    
+}
+
+h1{
+    font-family: Verdana;
+    color: white;
+    font-weight: 600;
+    font-size: 50px;
+}
+
+
+a{
+    cursor: pointer;
+    text-decoration: none !important;
+    color: #D5684C;
+}
+
+a:hover{
+    color: white !important;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.vertigo{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*Absolute elements that must be in front of the content section*/
+
+#navBar{
+    
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;  
+    height: 80px;    
+    position: absolute;
+    z-index: 100;
+    
+    transition: all 0.3s ease-out;
+}
+
+#navBar span:last-child {
+   display: none;  
+} 
+  
+.navDrop{
+
+  top: auto;
+  bottom: 0px;
+    
+  transform: translateY(0%);
+    
+  border: none !important;
+  background-color: transparent !important;
+    
+  flex-direction: row !important;
+    
+}
+
+/*When the navbar has only the back item, just position it left insted of centering*/
+.onlyBack{
+    
+    justify-content:flex-start !important;
+    padding-left: 100px;
+    
+}
+
+
+.navItem{
+    font: 20px  'Play' ;
+    font-weight: 400;
+    transition: all 0.1s linear;
+/*    letter-spacing: 2px;*/
+    
+}
+
+.fa{
+    font-size: 20px !important;
+}
+
+#navBar span{
+    color: #DE5A39;
+    font-size: 20px;
+}
+
+.selected{
+    color:  white !important;
+}
+
+/*Folding of flexbox navBar*/
+
+@media(max-width:700px){
+    
+    #navBar{
+        flex-direction: column;
+        height: auto;
+
+    }
+    
+    .navItem{
+    margin: 30px 0px;
+    }
+    
+}
+
+
+#wallpaper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -0.3%;
+    top: 0%;
+    
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    
+    transition: background 3s ease-out, width 3s ease-out, height 3s ease-out, left 0.5s ease-out, top 3s ease-out;
+}
+
+.darkenWallpaper{
+     filter: brightness(0.2);
+}
+
+.waiting-wall{
+    background: black !important;
+}
+
+
+.zoom{
+    width: 105% !important;
+    height: 105% !important;
+}
+
+/*various wallpaper positions */
+.posOne{
+    left: -0.3% !important;
+}
+
+.posTwo{
+    left: -1% !important;
+}
+
+.posThree{
+    left: -2% !important;
+}
+
+.posFour{
+    left: -3% !important;
+}
+
+/*HEADER*/
+
+#header{
+    display: none;
+    position: absolute;
+    width: 150px;
+    margin: 20px;   
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.shrink{
+    width: 80px !important;
+    margin: 20px !important; 
+}
+
+
+#imgWatermark{
+    
+    position: absolute;
+    height: 100%;
+    left: -50%;
+    filter: opacity(0);
+    
+    transition: all 0.5s ease-out;
+    z-index: 1;
+}
+
+.moving{
+    left: 0% !important;
+    transition: all 20s ease-out !important;
+}
+
+.dark{
+    filter: opacity(0.9) !important;
+}
+
+/*LANDING PAGE*/
+
+#section-Land{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1000;
+}
+
+
+#land-logo {
+    position: relative;
+    width: 500px;
+    flex: 3;
+    transition: all 0.3s ease-out;
+}
+
+#path{
+    transition: all 1s ease-in;
+    stroke-dasharray: 350;
+    stroke-dashoffset: 350;
+}
+
+#wrap-enter{
+    flex: 1;
+    width: 200px;
+    height: 100px;
+    position: relative;
+    transition: all 0.5s ease-out;
+}
+
+.loading{
+    transform: rotateX(90deg);
+}
+
+#wrap-enter h3{
+    color: #D5684C;
+    font-size: 15px;
+    font-family: "Droid Sans Mono";
+    cursor: pointer;
+}
+
+#wrap-enter h3:hover{
+    font-size: 18px;
+}
+
+
+/*Content section framework*/
+#section-Content{
+    position: absolute;
+    top: 0px;
+    padding-bottom: 70px;
+    padding-top: 70px;
+    transition: all ease-out 0.5s;
+    background-color: rgba(0,0,0,0.5) !important;
+    
+}
+
+#section-Content > .row{
+    height: 100%;
+}
+
+/*Events page*/
+
+#eventWrap {
+    width: 90%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.evName{
+    color: rgb(100,100,100);
+}
+
+.evDate{
+    color: rgb(200,200,200);
+}
+
+.evContainer{
+    
+    background-color: rgba(0,0,0,0.7);
+    padding: 10px;
+    padding-top: 30px;
+    margin: 20px;
+    position: relative;
+    transition: all 0.3s linear;
+    width: 400px;
+}
+
+.smal{
+    width: 70% !important;
+}
+
+.fullwidth{
+    width: 70% !important;
+}
+
+#evDummy{
+    padding: 0px;
+}
+
+.fader{
+    height: 15px;
+    width: 100%;
+    position: relative;
+    top: -15px;
+    background-color: rgba(0,0,0,0.5);
+}
+.evContainer p{
+    color: white;
+    max-height: 5000px;
+    overflow: hidden;
+    transition: all 1s ease-in;
+}
+
+.peak{
+    transition: all 0.1s linear !important;
+    overflow: hidden;
+    max-height: 115px !important;
+}
+
+.evContainer h5{
+    
+    background: -webkit-linear-gradient(#aaa, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+/*
+    overflow: hidden;
+    max-height: 50px;
+*/
+}
+
+.evEnter{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 70px;
+    transition: all 0.2s ease-out;
+}
+
+.evEnter:hover{
+  
+    width: 100px;
+}
+
+
+.evHead{
+    width: 100%;
+    height: 200px;
+}
+
+.evHead img{
+    height: 80%;
+    max-width: 80%;
+}
+
+.evRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px;
+}
+
+.evTitleLeft{
+    
+}
+
+.evTitleRight{
+    
+}
+
+.evTitleRight img{
+    width: 30px;
+}
+
+.evLine{
+    width: 100%;
+    height: 10px;
+    background-color: gray;
+}
+
+.evPara{
+    width: 100%;
+}
+
+.evPara p{
+    
+}
+
+#eventIconWrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#eventIcon{
+    width: 80%;
+    margin: 20px;
+    cursor: pointer;
+    color: red;
+   
+}
+
+#wrapContentR{ 
+    position: relative;
+    height: 100%;
+}
+
+#divEvents .infoBox{
+    width: 90%;
+    height: 90%;
+    max-width: 500px;
+}
+
+/*Box displaying scrolling text, also used in other sections*/
+
+.infoBox{
+    
+    padding: 2%;
+    border-color: black;
+    border-width: 1px;
+
+}
+
+.infoBox h3{
+    color: gray;
+    font-size: 15px;
+    font-family: Open Sans;
+    margin-left: 10px;
+}
+
+.infoBox p{
+     color: white;
+     color: lightgray;
+}
+
+
+/*Calendar Page*/
+
+.contentCanvas{
+    position: relative;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    z-index: 1;
+    
+    transition: all 0.5s ease-out;
+    background-color: transparent;
+}
+
+
+
+#tblCalendar{
+    width: 100%;
+/*    background-color: rgba(0,0,0,0.5);*/
+    color: lightgray;
+    margin: 0 0;
+    border-collapse: separate;
+    border-spacing: 0px 10px !important;
+    
+}
+
+#tblCalendar tr td{
+    border-bottom-color: white;
+    border-top-style: none;
+    color: white;
+    margin-bottom: 100px;
+    background-color: rgba(0,0,0,0.3);
+    font-family: Helvetica;
+}
+
+#tblCalendar tr:hover{
+    background-color: #D5684C;
+    color: black !important;
+}
+
+#tblCalendar tr:hover a{
+    
+}
+
+.tdEnter{
+    color: #D5684C;
+}
+
+.tdEnter a{
+    cursor: default;
+    color: gray;
+}
+
+.eventOpen{
+    cursor: pointer !important;
+    color: #D5684C !important;
+}
+
+.eventNotOpen{
+    cursor:default!important;
+    color: grey !important;
+}
+
+.eventNotOpen:hover{
+    cursor:default!important;
+    color: grey !important;
+}
+
+/*About page*/
+
+#divAbout .infoBox{
+    height: 90%;
+    width: 90%;
+    
+    max-width: 900px;
+    max-height: 600px;
+    
+/*    background-color: rgba(0,0,0,0.5);*/
+    
+}
+
+#colSocial{
+    height: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+   
+    
+}
+
+
+#colAbout{
+    height: 100%;
+}
+
+#divAbout img{
+    width: 90%;
+}
+
+.contactDetails{
+    color: lightgray;
+    font-size: 15px;
+    display: inline;
+}
+
+.contactDetails span{
+    margin-right: 10px;
+}
+
+/*CUSTOM SCROLLBARS*/
+
+.canScroll{
+    overflow-y: scroll;
+}
+
+.canScroll::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+.canScroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+.canScroll::-webkit-scrollbar-thumb {
+  background-color: grey;
+ 
+}
+
+
+.hide{
+    display: none !important;
+}
+
+
+/*GALLERY page*/
+
+#galWrap {
+    width: 90%;
+    height: 90%;
+    overflow-y: scroll;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.thumbContainer {
+    
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: relative;
+    
+}
+
+.thumbContainer img{
+  
+    width: 250px;
+    height: auto;
+    position: relative;
+    cursor: pointer;
+    
+}
+
+.thumbContainer:after {
+  
+    content: "";
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4); 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    transition: all 0.2s ease-out;
+    pointer-events: none;
+} 
+
+.thumbContainer:hover:after {
+    
+    background-color: transparent; 
+    
+} 
+
+
+
+
+
+#imgFull{
+    max-width: 70%;
+    max-height: 70%;
+    position: relative;
+    
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#btnClose {
+    color: #D5684C;
+    font-size: 20px;
+    position: absolute;
+    margin: 3%;
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
+    transition: all 0.1s linear;
+}
+
+#btnClose:hover {
+    font-size: 23px;
+  
+}
+
+#screenShade {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 100000;
+    display: none;
+    transition: all 1s linear;
+    
+    flex-direction: column;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.shade{
+    background-color: rgba(0,0,0,0.8) !important;
+    display: flex !important;
+}
+
+/*Calendar page*/
+
+#divCalendar h1{
+    width: 100%;
+}
+
+#calendarWrap {
+    width: 90%;
+    max-width: 1000px;
+    max-height: 80%;
+}
+
+.tint{
+    background-color: rgba(0,0,0,0.7) !important;
+}
+
+#divCalendar {
+   align-content: flex-start;
+}
+
+/*Faux images loaded into cache*/
+#dummy {
+    height: 0px;
+    width: 0px;
+}
+
+/*SPONSOR page*/
+
+#sponsorWrap {
+    width: 90%;
+    height: 90%;
+    overflow-y: scroll;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.sponsorContainer {
+    width: 250px;
+    transition: all 0.5s ease-in;
+    padding: 20px;
+}
+
+.sponsorContainer a{
+    width: 100%;
+}
+
+.sponsorContainer:hover{
+    background-color: rgba(0,0,0,0.5) !important;
+}
+.sponsorContainer a img{
+    width: 200px;
+}
+
+.sponsorContainer h3{
+    color: white;
+}
+
+.sponsorContainer h5{
+    color: darkgray;
+}
+
+.sponsorContainer p{
+    color: white;
+}

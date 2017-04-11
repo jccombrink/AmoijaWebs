@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Amoija Events</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap3.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    
+    <!-- Stylesheet -->
+    <link href="css/freestyle.css" rel="stylesheet">
+    
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Balthazar" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Balthazar|Play|Source+Code+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-83374671-5', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body>
+<!--Absolute elements that must be in front of the content section-->
+    <!--Fullscreen image viewer-->
+   <div id="screenShade"> 
+         
+        <div id="imgFullWrap">
+         <span id="btnClose">X</span>
+         <img id="imgFull" src="img/background.jpg">
+        </div>
+
+   </div>
+    
+    <!--Small home icon top left-->
+    
+    <div id="header"> 
+        <a><img src="img/logo.svg"></a>
+    </div>
+    
+    <!--The navbar-->
+    <div id="navBar" class="vertigo hide"> <!--The navbar-->
+        <!--<div class="navItem text-center" id="itmBack"><a><span class="glyphicon glyphicon-chevron-left"></span>back</a></div>-->
+    </div>
+    
+    <!--AMOIJA watermark-->
+    <img id="imgWatermark" src="img/watermark.svg" class="">
+    
+    <!--Main background (with the swimmers)-->
+    <div id="wallpaper" class="waiting-wall waitforme"></div>
+    <img id="dummy" src="img/background.jpg" class="waitforme">
+
+    <!--Landing page, before clicking to enter the site-->
+    <section id="section-Land">
+        
+        <img id="land-logo" src="img/logo.svg" class="loading waitforme">
+        
+        <svg class="center-block" id="line" width="500px" height="10px" viewBox="0 0 316 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+                <g transform="matrix(1,0,0,1,-448.531,-304.297)">
+                    <path id="path" d="M451.129,306.895L761.677,306.895" style="fill:none;stroke-width:3px;stroke:#D5684C;"/>
+                </g>
+            </svg>
+        
+        <div id="wrap-enter" class="text-center loading">
+            <a id="btnEnterSite"><h3>Enter Site <br><br><i class="fa fa-level-down fa-2x"></i></h3></a>
+        </div>
+    </section>
+<!--Actual content area-->
+   
+    <section id="section-Content" class="hide"> <!--wraps individual content divs-->
+        
+        <!--The events page content-->
+        <div id="divEvents" class="contentCanvas row hide">
+        
+        	<div id="eventWrap" class="canScroll">
+        	</div>
+        </div>
+        <!--The calendar page content-->
+        <div id="divCalendar" class="contentCanvas hide">
+                
+            <h1 class="text-center">CALENDAR</h1>
+                
+            <div id="calendarWrap" class="canScroll">
+                    
+                <table id="tblCalendar" class="table ">
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--The gallery page content-->
+        <div id="divGallery" class="contentCanvas hide">
+            <div id="galWrap" class="canScroll">
+                <!--Populated dynamically, this is just a example of the items look-->
+            </div>
+        </div>
+        <!--The about page content-->
+        <div id="divAbout" class="contentCanvas hide">
+            <div class="row infoBox"> 
+                <div id="colSocial" class="col-xs-6">
+                    <img src="img/logo.svg">
+                </div>
+
+                <div id="colAbout" class="col-xs-6 canScroll">
+                <h3> The Amoija Vision: </h3>
+                <hr>
+                <p> Started in 2014 by two brothers from Stellenosch, Amoija Events was born from out of love for sport and respect for the great outdoors.
+                    The vision has always been clear- create world-class endurance events, inspired by the mighty mountains of the Western Cape.
+                </p>
+                <br>
+                <h3> Our Events: </h3>
+                <hr>
+                <p>Events held on exclusive routes, available only to Amoija entrants.</p>
+                <p>Amoija also organises 3rd party events. Highly skilled and experienced guns for hire who help bring your vision onto the trails.</p>
+                <br>
+                <h3> Our Mission: </h3>
+                <hr>
+                <p>Amoija aims to become give athletes a testing endurance challenge, backed by an unrivaled event experience. We are striving to become a leader in creating experiences, not merely adding more races to the calendar.</p>
+                </div>
+            </div>
+        </div>
+        <!--The Sponsors page content-->
+        <div id="divSponsors" class="contentCanvas hide">
+            
+            <div id="sponsorWrap" class="canScroll">
+            
+                <!--Populated dynamically, this is just a example of the items look-->
+                <div class="sponsorContainer">
+                    <a href="http://www.standradbank.co.za" target="_blank" ><img src="img/sponsors/Std.png" class="center-block">
+                    <h3>Standard Bank</h3>
+                    <h5>Title Sponsor</h5>
+                    <br>
+                    <p>The Standard Bank of South Africa Limited is one of South Africa's largest financial services groups, operating in 20 countries across Africa and other key markets around the world.</p>
+                    </a>
+                </div>
+                
+                <div class="sponsorContainer">
+                    <a href="mailto:herman@amoija.com" target="_blank" ><img src="img/sponsors/become.svg" class="center-block">
+                    <h3>Become A Sponsor</h3>
+                    <h5>Join our movement</h5>
+                    <br>
+                    <p>Because we know that business and endurance are different sides of the same coin. We know that success comes from being disciplined, putting in the hard work and taking strides of faith.</p>
+                    </a>
+                </div>
+                
+            </div>
+        
+        </div>
+    </section>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    
+    <!-- Bootstrap -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Javascript -->
+    <script src="js/thescript.js"></script>
+    
+    
+      <!-- Images Loaded plugin -->
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+ 
+</body>
+
+</html>
