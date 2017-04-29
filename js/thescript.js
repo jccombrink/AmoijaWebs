@@ -3,11 +3,17 @@ var raceInfo;
 $(document).ready(function(){
     $.post("events.php", {}, function(data) {
         eventInfo = data;
-        popEventsNav();
+        if (raceInfo){
+            popEventsNav();
+            popCalendar();
+        }
     }, "json");
     $.post("races.php", {}, function(data) {
         raceInfo = data;
-        popCalendar();
+        if (eventInfo){
+            popEventsNav();
+            popCalendar();
+        }
     }, "json");
 
     //Pre-loading activities

@@ -1,6 +1,6 @@
 <?php
-$username="yosemiv8_amoija";$password="amoija";$database="yosemiv8_amoija";
-//$username="root";$password="spoorkoors";$database="amoija";
+//$username="yosemiv8_amoija";$password="amoija";$database="yosemiv8_amoija";
+$username="root";$password="spoorkoors";$database="amoija";
 
 // Create connection
 $conn = new mysqli(localhost, $username, $password);
